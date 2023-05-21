@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Dialog, DialogContent, Paper, PaperProps } from '@mui/material';
+import { Dialog, DialogContent, DialogProps, Paper, PaperProps } from '@mui/material';
 import Draggable from 'react-draggable';
 
-interface DraggableDialogProps {
+interface ModalProps extends DialogProps{
   open: boolean;
   handleClose: () => void;
   children: React.ReactNode;
@@ -20,12 +20,12 @@ function PaperComponent(props: PaperProps) {
     );
   }
   
-const DraggableDialog: React.FC<DraggableDialogProps> = ({ open, handleClose, children, ...other }) => {
+const Modal: React.FC<ModalProps> = ({ open, handleClose, children, ...other }) => {
   return (
     <Dialog
       open={open}
       onClose={handleClose}
-      PaperComponent={PaperComponent}
+      //PaperComponent={PaperComponent}
       {...other}
     >
       <DialogContent id="draggable-dialog-title">
@@ -35,4 +35,4 @@ const DraggableDialog: React.FC<DraggableDialogProps> = ({ open, handleClose, ch
   );
 };
 
-export default DraggableDialog;
+export default Modal;
