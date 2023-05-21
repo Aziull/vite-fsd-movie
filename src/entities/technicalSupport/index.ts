@@ -1,0 +1,1 @@
+export { technicalSupportApi, useCreateTechnicalSupportMutation } from './api/technicalSupportApi'; 
