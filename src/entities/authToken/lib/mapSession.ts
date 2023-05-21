@@ -1,9 +1,8 @@
-import { type SessionDto } from '../api/types'
-import { type Session, type SessionUserId } from '../model/types'
+import { AuthTokenDto } from "../api/types";
+import { AuthToken } from "../model/types";
 
-export function mapSession(dto: SessionDto): Session {
+export function mapAuthToken(authTokenDto: AuthTokenDto): AuthToken {
   return {
-    accessToken: dto.accessToken,
-    userId: dto.user.id as SessionUserId,
-  }
+      token: authTokenDto.token,
+  };
 }
