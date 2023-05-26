@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthToken } from './types';
+import { sessionApi } from '../api/sessionApi';
 
 interface AuthTokenState {
-    token: string | null;
+    authToken: string | null;
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null;
 }
 
 const initialState: AuthTokenState = {
-    token: null,
+    authToken: null,
     status: 'idle',
     error: null
 }
@@ -18,11 +19,11 @@ export const authTokenSlice = createSlice({
     initialState,
     reducers: {
         setAuthToken: (state, action: PayloadAction<AuthToken>) => {
-            state.token = action.payload.token;
+            state.authToken = action.payload.authToken;
             state.status = 'succeeded';
         },
         clearAuthToken: (state) => {
-            state.token = null;
+            state.authToken = null;
             state.status = 'idle';
         },
         startLoading: (state) => {
@@ -32,9 +33,17 @@ export const authTokenSlice = createSlice({
             state.status = 'failed';
             state.error = action.payload;
         }
-    }
+    },
+    extraReducers: (builder) => {
+        builder.addMatcher(
+          sessionApi.endpoints.login.matchFulfilled,
+          (state: AuthTokenState, { payload }) => {
+            state.authToken = payload.authToken
+          }
+        )
+      },
 });
 
 export const { setAuthToken, clearAuthToken, startLoading, hasError } = authTokenSlice.actions;
 
-export const selectIsAuthorized = (state: RootState) => state.authToken.token !== null;
+export const selectIsAuthorized = (state: RootState) => state.authToken.authToken !== null;

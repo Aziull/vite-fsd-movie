@@ -1,6 +1,6 @@
 export type MediaVideoDto = {
-    movie_id: number;
-    video_url: string;
+    title: string;
+    video_file: string;
 };
 
 export type MediaVideoRequestArgs = {

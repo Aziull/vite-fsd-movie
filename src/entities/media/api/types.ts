@@ -12,7 +12,8 @@ export type MediaDto = {
     poster: Url,
     year: number,
     genres: GenreDto[],
-    categoty: CategoryDto,
+    category: CategoryDto,
+    type: {id: number, type: string}
 }
 
 export type MediaDetailDto = MediaDto & {

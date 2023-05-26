@@ -13,5 +13,5 @@ export const mapUserProfile = (dto: UserProfileDto): UserProfile => ({
     lastName: dto.last_name,
     firstName: dto.first_name,
     phoneNumber: dto.phone_number,
-    birthday: dto.birthday ? new Date(dto.birthday) : null
+    birthday: dto.birthday ? new Date(dto.birthday).toString() : null
 })

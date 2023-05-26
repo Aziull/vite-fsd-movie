@@ -2,9 +2,9 @@ import { MediaId } from "@/entities/media/@x/mediaVideo";
 import { MediaVideo } from "../model/types";
 import { MediaVideoDto } from "../api/types";
 
-export function mapMovieVideo(movieVideoDto: MediaVideoDto): MediaVideo {
+export function mapMovieVideo(dto: MediaVideoDto): MediaVideo {
     return {
-        movieId: movieVideoDto.movie_id as MediaId,
-        videoUrl: movieVideoDto.video_url,
+        title: dto.title,
+        videoFile: dto.video_file,
     };
 }

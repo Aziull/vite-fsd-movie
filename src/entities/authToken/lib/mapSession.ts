@@ -3,6 +3,6 @@ import { AuthToken } from "../model/types";
 
 export function mapAuthToken(authTokenDto: AuthTokenDto): AuthToken {
   return {
-      token: authTokenDto.token,
+    authToken: authTokenDto.auth_token,
   };
 }

@@ -2,6 +2,11 @@ import { MediaId } from "@/entities/media/@x/mediaVideo";
 
 
 export type MediaVideo = {
-    movieId: MediaId;
-    videoUrl: string;
+    title: string;
+    videoFile: string;
 };
+
+export type MediaVideos = {
+    mediaId: MediaId,
+    videos: MediaVideo[]
+}

@@ -6,3 +6,4 @@ export {
     useGetUserProfileQuery,
     useUpdateUserProfileMutation, userApi
 } from './api/userApi';
+export {default as UserAvatar} from './ui/UserAvatar/UserAvatar'

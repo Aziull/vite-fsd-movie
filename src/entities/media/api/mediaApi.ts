@@ -19,8 +19,8 @@ export const mediaApi = baseApi.injectEndpoints({
             }),
             transformResponse: (response: MediaDto[]) => response.map(mapMedia),
         }),
-        MediaById: build.query<MediaDetail, MedisDetailsRequestArgs>({
-            query: ({mediaId}) => ({
+        MediaDetails: build.query<MediaDetail, MediaId>({
+            query: (mediaId) => ({
                 url: `api/v1/movies/movie/${mediaId}/`
             }),
             transformResponse: (response: MediaDetailDto) => mapMediaDetail(response),
@@ -32,5 +32,5 @@ export const mediaApi = baseApi.injectEndpoints({
 export const { 
     useMediaRecomendedQuery,
     useMediaAllQuery,
-    useMediaByIdQuery
+    useMediaDetailsQuery
   } = mediaApi

@@ -10,6 +10,7 @@ export const mapMedia = (dto: MediaDto): Media => {
         poster: dto.poster,
         year: dto.year,
         genres: dto.genres.map(mapGenre),
-        categoty: mapCategory(dto.categoty),
+        category: mapCategory(dto.category),
+        type: dto.type
     }
 }

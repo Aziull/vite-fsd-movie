@@ -14,6 +14,7 @@ export const mapMediaDetail = (dto: MediaDetailDto): MediaDetail => {
         budget: dto.budget,
         feedInUsa: dto.feed_in_usa,
         feedInWorld: dto.feed_in_world,
-        draft: dto.draft
+        draft: dto.draft,
+        type: dto.type
     }
 }

@@ -10,5 +10,5 @@ export type UserProfile = {
     lastName: string | null,
     firstName: string | null,
     phoneNumber: string | null,
-    birthday: Date | null
+    birthday: null | string
 }

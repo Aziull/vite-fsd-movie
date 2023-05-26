@@ -15,7 +15,8 @@ export type Media = {
     poster: Url,
     year: number,
     genres: Genre[],
-    categoty: Category,
+    category: Category,
+    type: {id: number, type: string}
 }
 
 export type MediaDetail = Media & {
@@ -28,5 +29,5 @@ export type MediaDetail = Media & {
     budget: number,
     feedInUsa: number,
     feedInWorld: number,
-    draft: boolean
+    draft: boolean,
 }

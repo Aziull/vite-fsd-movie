@@ -1,5 +1,5 @@
 export type AuthTokenDto = {
-  token: string;
+  auth_token: string;
 };
 
 export type CreateAuthTokenDto = {

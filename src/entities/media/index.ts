@@ -1,9 +1,11 @@
 
-export{ 
-    useMediaRecomendedQuery,
-    useMediaAllQuery,
-    useMediaByIdQuery,
-    mediaApi
-  } from './api/mediaApi';
+export {
+  useMediaRecomendedQuery,
+  useMediaAllQuery,
+  useMediaDetailsQuery,
+  mediaApi
+} from './api/mediaApi';
 
-export type { Media, MediaDetail } from './model/types'
+export type { MediaId, Media, MediaDetail } from './model/types'
+export { default as MediaCard } from './ui/MediaCard/MediaCard'
+export { mediaSlice } from './model/slice'
