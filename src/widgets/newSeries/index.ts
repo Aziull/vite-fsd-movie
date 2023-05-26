@@ -1,0 +1,1 @@
+export {default as NewSeries} from './ui/newSeries'

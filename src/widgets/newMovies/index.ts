@@ -1,0 +1,1 @@
+export {default as NewMovies} from './ui/newMoviesList'
