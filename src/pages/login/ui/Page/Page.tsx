@@ -13,11 +13,10 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h1>Login page</h1>
-      <p>
-        Use {config.API_USER_EMAIL} / {config.API_USER_PASSWORD} as test user
+      {/* <p>
+        Use {config.API_USER_USERNAME} / {config.API_USER_PASSWORD} as test user
         credentials
-      </p>
+      </p> */}
       <LoginForm onComplete={onComplete} />
     </div>
   )
