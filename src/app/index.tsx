@@ -15,11 +15,11 @@ const App: React.FC = () => {
     return (
         <ReduxProvider store={store}>
             <BrowserRouter>
-                <ThemeProvider theme={theme}>
+                {/* <ThemeProvider theme={theme}> */}
                     <Layout>
                         <Routing />
                     </Layout>
-                </ThemeProvider>
+                {/* </ThemeProvider> */}
             </BrowserRouter>
         </ReduxProvider>
 
