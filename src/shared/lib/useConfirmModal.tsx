@@ -53,8 +53,6 @@ const useConfirmModal = (): UseConfirmModalHook => {
 
     const show = useCallback(() => {
         setIsOpen(true);
-        console.log('isOpen', isOpen)
-        //setConfirmAction(() => callback);
     }, []);
 
     const close = useCallback(() => {

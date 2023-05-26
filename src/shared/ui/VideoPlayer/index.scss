@@ -1,0 +1,23 @@
+.video-container {
+    position: relative;
+  }
+  
+  .video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  /* Стилізуйте кнопки за своїми потребами */
+  .play-button {
+    /* Стилі кнопки "Play" */
+  }
+  
+  .volume-button {
+    /* Стилі кнопки "Volume" */
+  }
+  
+  /* інші стилі кастомних кнопок */
+  
