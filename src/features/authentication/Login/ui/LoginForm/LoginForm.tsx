@@ -55,6 +55,7 @@ const LoginForm: React.FC<Props> = (props) => {
                         margin="normal"
                         required
                         fullWidth
+                        defaultValue={'qweqwe'}
                         id="login-username"
                         label="Username"
                         autoFocus
@@ -68,12 +69,9 @@ const LoginForm: React.FC<Props> = (props) => {
                         label="Password"
                         type="password"
                         id="password"
+                        defaultValue={'zxczxc123'}
                         autoComplete="current-password"
                         {...register('password')}
-                    />
-                    <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
                     />
                     <Button
                         type="submit"
@@ -85,13 +83,10 @@ const LoginForm: React.FC<Props> = (props) => {
                     </Button>
                     <Grid container>
                         <Grid item xs>
-                            <Link href="#" variant="body2">
-                                Forgot password?
-                            </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="#" variant="body2">
-                                {"Don't have an account? Sign Up"}
+                            <Link href="/register" variant="body2">
+                                Не маєте акаунт? Зараєструватися
                             </Link>
                         </Grid>
                     </Grid>

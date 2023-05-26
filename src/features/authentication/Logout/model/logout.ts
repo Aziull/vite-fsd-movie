@@ -1,11 +1,23 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { sessionApi, clearSessionData } from '@/entities/authToken'
+import { sessionApi, clearAuthToken } from '@/entities/authToken'
 import { wait } from '@/shared/lib'
+import { isFetchBaseQueryError } from '@/shared/api'
 
 export const logoutThunk = createAsyncThunk<void, void, { state: RootState }>(
   'authentication/logout',
   async (_: unknown, { dispatch }) => {
-    dispatch(clearSessionData())
+    dispatch(clearAuthToken())
+    try {
+      await dispatch(sessionApi.endpoints.logout.initiate()).unwrap()
+    } catch (error) {
+      if (isFetchBaseQueryError(error)) {
+        if (typeof error.data === 'string') {
+          throw new Error(error.data)
+        }
+      }
+
+      throw new Error('Unknown error')
+    }
 
     // Wait 10ms to invalidateTags in next event loop tick.
     // Otherwise after invalidate related requests with SESSION_TAG

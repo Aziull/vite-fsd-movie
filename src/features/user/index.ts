@@ -1,0 +1,1 @@
+export  {default as ChangeUserProfile} from './ui/ChangeUserProfile/ChangeUserProfile'

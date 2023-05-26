@@ -25,7 +25,7 @@ const LogoutButton = () => {
 
     return (
         <>
-            <Button color='secondary' onClick={openConfirm}>Вийти</Button>
+            <Button variant='outlined' color='inherit'  onClick={openConfirm}>Вийти</Button>
             <ConfirmModal title='ви дійсно хочете вийти?' onConfirm={onConfirm}  />
         </>
 

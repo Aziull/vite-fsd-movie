@@ -1,6 +1,6 @@
 import { CssBaseline, Box, Typography, TextField, FormControlLabel, Checkbox, Button, Grid } from '@mui/material'
 import React, { useCallback } from 'react'
-import { Link } from '@mui/material'
+import { Link } from 'react-router-dom'
 import { Copyright } from '@/shared/ui'
 import { FieldValues, Resolver, useForm } from 'react-hook-form'
 import { useAppDispatch } from '@/shared/model'
@@ -50,7 +50,7 @@ const RegisterForm: React.FC<Props> = (props) => {
                 }}
             >
                 <Typography component="h1" variant="h5">
-                    Увійти
+                    Реєстрація
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit(onSubmitHandler)} noValidate sx={{ mt: 1 }}>
                     <TextField
@@ -94,12 +94,10 @@ const RegisterForm: React.FC<Props> = (props) => {
                     </Button>
                     <Grid container>
                         <Grid item xs>
-                            <Link href="#" variant="body2">
-                                Forgot password?
-                            </Link>
+
                         </Grid>
                         <Grid item>
-                            <Link href="#" variant="body2">
+                            <Link to='/login'>
                                 {"вже маєте акаунт?"}
                             </Link>
                         </Grid>

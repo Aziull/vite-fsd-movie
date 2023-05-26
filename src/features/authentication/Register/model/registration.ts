@@ -1,4 +1,4 @@
-import { sessionApi } from "@/entities/authToken"
+import { userApi } from "@/entities/user"
 import { isFetchBaseQueryError } from "@/shared/api"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
@@ -12,7 +12,7 @@ export const registrantionThunk = createAsyncThunk<void, Params, {state: RootSta
     'authentication/registration',
     async (body: Params, {dispatch}) => {
         try{
-            await dispatch(sessionApi.endpoints.register.initiate(body)).unwrap()
+            await dispatch(userApi.endpoints.createUser.initiate(body)).unwrap()
         } catch (error) { 
             if (isFetchBaseQueryError(error)) {
                 if (typeof error.data === 'string') {
