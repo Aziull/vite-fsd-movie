@@ -1,7 +1,7 @@
 import { baseApi } from "@/shared/api";
 import { Media, MediaDetail, MediaId } from "../model/types";
 import { response } from "express";
-import { MediaDetailDto, MediaDto, MedisDetailsRequestArgs } from "./types";
+import { MediaDetailDto, MediaDto, MedisDetailsRequestArgs, SearchParams } from "./types";
 import { mapMedia } from "../lib/mapMedia";
 import { mapMediaDetail } from "../lib/mapMediaDetail";
 
@@ -13,9 +13,10 @@ export const mediaApi = baseApi.injectEndpoints({
             }),
             transformResponse: (response: MediaDto[]) => response.map(mapMedia),
         }),
-        MediaAll: build.query<Media[], void>({
-            query: () => ({
-                url: `api/v1/movies/movie/all/`
+        MediaAll: build.query<Media[], SearchParams>({
+            query: (params) => ({
+                url: `api/v1/movies/movie/all/`,
+                params,
             }),
             transformResponse: (response: MediaDto[]) => response.map(mapMedia),
         }),

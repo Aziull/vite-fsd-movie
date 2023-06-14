@@ -33,6 +33,8 @@ export const mediaSlice = createSlice({
             })
             .addMatcher(mediaApi.endpoints.MediaAll.matchFulfilled, (state, action: PayloadAction<Media[]>) => {
                 state.status = 'succeeded';
+                console.log('md',action.payload)
+
                 state.entities = action.payload;
             })
             .addMatcher(mediaApi.endpoints.MediaAll.matchRejected, (state, { error }) => {

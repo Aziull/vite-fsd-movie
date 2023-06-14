@@ -1,14 +1,19 @@
 import { mediaApi } from "@/entities/media";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { response } from "express";
 
+interface SearchParams {
+    title?: string;
+}
 
-export const searchMovies = createAsyncThunk(
-    "movies/searchMovies",
-     async (searchTerm: string, { dispatch }) => {
-        const res = await dispatch(mediaApi.endpoints.MediaAll.initiate())
-        .unwrap()
-        return res
-        // Робимо запит до API
+export const searchMediaThunk = createAsyncThunk<void, SearchParams, { state: RootState }>(
+    'media/search',
+    async (params: SearchParams, { dispatch }) => {
+        try {
+            const response = await dispatch(mediaApi.endpoints.MediaAll.initiate(params)).unwrap();
+            // Handle the response if necessary
+        } catch (error) {
+
+            throw new Error('Unknown error');
+        }
     }
 );

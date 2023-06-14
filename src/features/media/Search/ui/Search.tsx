@@ -1,9 +1,7 @@
-import { TextField, Button } from '@mui/material';
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { useDispatch } from 'react-redux';
-import { searchMovies } from '../model/search';
+import { TextField, Button, Box } from '@mui/material';
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { useAppDispatch } from '@/shared/model';
-
+import {searchMediaThunk} from '../model/search'
 
 const MovieSearch: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -15,23 +13,25 @@ const MovieSearch: React.FC = () => {
 
     const handleSubmit = (event: FormEvent): void => {
         event.preventDefault();
-        dispatch(searchMovies(searchTerm)).then(re=> {
-            console.log('resss',re)
-        }) ;
+        dispatch(searchMediaThunk({ title: searchTerm }));
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
-                variant="outlined"
-                label="Search for a movie"
-                value={searchTerm}
-                onChange={handleChange}
-            />
-            <Button variant="contained" color="primary" type="submit">
-                Search
-            </Button>
-        </form>
+        <>
+            <Box component={'form'} display={'flex'} alignItems={'stretch'} onSubmit={handleSubmit}>
+                <TextField
+                    
+                    variant="outlined"
+                    placeholder='Введіть назву'
+                    value={searchTerm}
+                    onChange={handleChange}
+                />
+                <Button variant="contained" color="primary" type="submit">
+                    Пошук
+                </Button>
+            </Box>
+           
+        </>
     );
 };
 

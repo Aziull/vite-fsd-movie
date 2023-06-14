@@ -1,3 +1,4 @@
+import MovieSearch from '@/features/media/Search/ui/Search'
 import { VideoPlayer } from '@/shared/ui'
 import { NewMovies } from '@/widgets/newMovies'
 import { NewSeries } from '@/widgets/newSeries'
@@ -8,6 +9,7 @@ import React from 'react'
 const HomePage = () => {
   return (
     <Container maxWidth='xl'>
+      <MovieSearch/>
         <RecomendedMediaList /><br></br>
         <NewSeries/><br></br>
         <NewMovies/>

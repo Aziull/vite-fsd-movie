@@ -14,7 +14,7 @@ export const Layout: React.FC<LayoutPropsType> = ({children}) => {
     <>
     <CssBaseline/>
        <Header/>
-        <div style={{marginTop: '64px'}}>
+        <div style={{marginTop: '80px'}}>
             {children}
         </div>
         {/* <Footer /> */}

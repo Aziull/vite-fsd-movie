@@ -8,6 +8,7 @@ import { MediaPage } from './media';
 import { ProfilePage } from './profile';
 import MoviesPage from './Movies/Page/Page';
 import SeriesPage from './Series/Page/Page';
+import { Groups } from './groups';
 
 const Routing = () => {
     return (
@@ -20,6 +21,7 @@ const Routing = () => {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/movies" element={<MoviesPage />} />
             <Route path="/series" element={<SeriesPage />} />
+            <Route path="/groups" element={<Groups />} />
 
         </Routes>
     )

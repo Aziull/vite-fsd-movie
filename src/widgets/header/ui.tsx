@@ -25,6 +25,10 @@ export const Header: React.FC = () => {
                             <Button component={NavLink} to='/series'  color='inherit'>
                                 Серіали
                             </Button>
+                          {isAuthorized && <Button component={NavLink} to='/groups'  color='inherit'>
+                            Мої групи
+                          </Button> }
+
                         </Box>
 
                         {/* <Search/> */}

@@ -1,10 +1,11 @@
 import React from 'react'
 import './styles.scss';
-import { Box, CircularProgress, Container, Grid, Tab, Typography } from '@mui/material';
+import {Box, Button, CircularProgress, Container, Grid, Tab, Typography} from '@mui/material';
 //import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { MediaDetail } from '@/entities/media';
 import { DataFormatter } from '@/shared/ui';
 import { VideoList } from '../videoList';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 type Props = {
   media?: MediaDetail,
@@ -65,7 +66,10 @@ const MediaDetails: React.FC<Props> = ({ media, isFetching }) => {
 
           </Grid>
         </Grid>
-
+        <Box marginBottom={10}>
+          <Button> <StarBorderIcon/> <StarBorderIcon/> <StarBorderIcon/> <StarBorderIcon/> <StarBorderIcon/> Оцінити</Button> <br/>
+          <Button>Додати до обраного</Button>
+        </Box>
         <VideoList mediaId={media.id} type={media.type} />
       </Container>
     </>

@@ -32,3 +32,10 @@ export type MediaDetailDto = MediaDto & {
 export type MedisDetailsRequestArgs = {
     mediaId: number 
 }
+
+export interface SearchParams {
+    genre?: string;
+    category?: string;
+    type_movie?: string;
+    title?: string;
+  }
